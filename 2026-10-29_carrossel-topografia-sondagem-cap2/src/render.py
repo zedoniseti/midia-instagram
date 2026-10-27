@@ -32,10 +32,15 @@ h1 em{color:#F5C518;font-style:italic}
 .cta{position:absolute;left:80px;bottom:92px;font-weight:700;font-size:24px;color:#F5C518;letter-spacing:.5px}
 .cta i{display:block;width:108px;height:2px;background:#F5C518;margin-top:22px;position:relative}
 .cta i:after{content:"";position:absolute;right:-1px;top:-6px;width:12px;height:12px;border-top:2px solid #F5C518;border-right:2px solid #F5C518;transform:rotate(45deg)}
+h2{font-family:Lora;font-weight:700;font-size:84px;line-height:1.1;color:#F5C518;margin-top:86px}
 .h{position:absolute;right:80px;bottom:82px;font-weight:600;font-size:22px}
 """
 
 SLIDES = {
+ "slide02_erro": lambda: f"""<div class="c"><div class="dots">{dots(2)}</div>
+   <h2>Pular essa etapa<br>para economizar</h2>
+   <div class="sub">O barato vira trinca, recalque e fundação refeita.</div>
+   <div class="h">@eng.josedoniseti</div></div>""",
  "slide01_capa": lambda: f"""<div class="c"><div class="dots">{dots(1)}</div>
    <div class="tag">CAP. 2 · ETAPA 1</div>
    <h1>Seu terreno esconde<br>o que você <em>não vê.</em></h1>
