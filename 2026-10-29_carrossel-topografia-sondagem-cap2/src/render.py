@@ -18,7 +18,9 @@ CSS = """
 *{margin:0;padding:0;box-sizing:border-box}
 body{width:1080px;height:1350px;overflow:hidden;font-family:Poppins;color:#fff}
 .s{position:relative;width:1080px;height:1350px;background-size:cover;background-position:center}
-.s:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,18,30,.92) 0%,rgba(14,18,30,.70) 30%,rgba(14,18,30,.10) 55%,rgba(14,18,30,0) 70%,rgba(14,18,30,.55) 100%)}
+.s:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,18,30,.92) 0%,rgba(14,18,30,.70) 30%,rgba(14,18,30,.10) 55%,rgba(14,18,30,0) 70%,rgba(14,18,30,.70) 100%)}
+.cta,.h{text-shadow:0 2px 10px rgba(0,0,0,.85)}
+.cta i{box-shadow:0 1px 6px rgba(0,0,0,.8)}
 .c{position:absolute;inset:0;padding:80px}
 .dots{display:flex;gap:14px;margin-top:6px}
 .dot{width:14px;height:14px;border:2px solid #fff;border-radius:50%}
