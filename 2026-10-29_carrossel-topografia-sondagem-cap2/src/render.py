@@ -101,7 +101,7 @@ SLIDES = {
    <h2>Pular essa etapa<br>para economizar</h2>
    <div class="sub">O barato vira trinca, recalque e fundação refeita.</div></div>
    <div class="h">@eng.josedoniseti</div>""",
- "slide03_topografia": lambda: f"""<div class="c"><div class="dots">{dots(3)}</div>
+ "slide03_topografia_ia": lambda: f"""<img class="iaimg" style="height:880px" src="data:image/jpeg;base64,{__import__('base64').b64encode((HERE.parent/'fotos/topografia_recorte.jpg').read_bytes()).decode()}"><div class="c"><div class="dots">{dots(3)}</div>
    <h2>Topografia</h2>
    <div class="sub">Mede desnível, divisas e a área real do terreno.<br>Sem ela: aterro fora do orçamento e muro fora da divisa.</div>
    <div class="h">@eng.josedoniseti</div></div>""",
