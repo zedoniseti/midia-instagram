@@ -158,6 +158,11 @@ SLIDES = {
    <div class="cta2">Vai construir em Fartura e região?<br>Me chama no Direct antes de começar 👇</div>
    <div class="assin"><b>José Doniseti</b><span>Eng. Civil · CREA 5068891394 · Corretor · CRECI 318782-F</span></div>
    <div class="h2b">@eng.josedoniseti</div>""",
+ "slide01_capa_ia": lambda: f"""<style>.ia{{background:rgb(11,18,36) !important}}</style><img class="iaimg" style="height:890px;bottom:30px;-webkit-mask-image:linear-gradient(to right,transparent,#000 1.5%,#000 98.5%,transparent),linear-gradient(to bottom,transparent,#000 3%,#000 97%,transparent)" src="data:image/jpeg;base64,{__import__('base64').b64encode((HERE.parent/'fotos/capa_nanobanana_recorte.jpg').read_bytes()).decode()}"><div class="c"><div class="dots">{dots(1)}</div>
+   <div class="tag">CAP. 2 · ETAPA 1</div>
+   <h1>Seu terreno esconde<br>o que você <em>não vê.</em></h1>
+   <div class="cta">ARRASTE PARA DESCOBRIR<i></i></div><div class="h">@eng.josedoniseti</div></div>
+   <svg style="position:absolute;left:0;top:0" width="1080" height="1350"><ellipse cx="712" cy="1052" rx="118" ry="62" fill="none" stroke="#F5C518" stroke-width="4" stroke-dasharray="12 9" transform="rotate(-8 712 1052)"/><text x="840" y="985" font-family="Lora" font-weight="700" font-size="64" fill="#F5C518">?</text></svg>""",
  "slide01_capa": lambda: f"""<div class="c"><div class="dots">{dots(1)}</div>
    <div class="tag">CAP. 2 · ETAPA 1</div>
    <h1>Seu terreno esconde<br>o que você <em>não vê.</em></h1>
