@@ -42,6 +42,9 @@ h2{font-family:Lora;font-weight:700;font-size:84px;line-height:1.1;color:#F5C518
 .lbr{font:600 24px Poppins;fill:#ff6b6d}
 .fecho{position:absolute;left:80px;bottom:132px;font-family:Lora;font-weight:700;font-size:46px}
 .fecho em{color:#ff6b6d;font-style:normal}
+.ia{background:#0c1421 !important}
+.ia:before{display:none}
+.iaimg{position:absolute;left:50%;transform:translateX(-50%);bottom:0;height:900px}
 .h{position:absolute;right:80px;bottom:82px;font-weight:600;font-size:22px}
 """
 
@@ -93,6 +96,11 @@ SLIDES = {
 </svg>
    <div class="fecho">Recalque diferencial = <em>trinca.</em></div>
    <div class="h">@eng.josedoniseti</div>""",
+ "slide02_erro_ia": lambda: f"""<img class="iaimg" src="data:image/jpeg;base64,{__import__('base64').b64encode((HERE.parent/'fotos/recalque_nanobanana_recorte.jpg').read_bytes()).decode()}">
+   <div class="c"><div class="dots">{dots(2)}</div>
+   <h2>Pular essa etapa<br>para economizar</h2>
+   <div class="sub">O barato vira trinca, recalque e fundação refeita.</div></div>
+   <div class="h">@eng.josedoniseti</div>""",
  "slide01_capa": lambda: f"""<div class="c"><div class="dots">{dots(1)}</div>
    <div class="tag">CAP. 2 · ETAPA 1</div>
    <h1>Seu terreno esconde<br>o que você <em>não vê.</em></h1>
@@ -100,7 +108,7 @@ SLIDES = {
 }
 
 def render(name, photo=None):
-    html = f"<html><head><meta charset='utf-8'><style>{CSS}</style></head><body><div class='s{" dark" if name.endswith("esquema") else ""}' style='background-image:{bg(photo) if not name.endswith("esquema") else "radial-gradient(120% 90% at 30% 20%,#1a1d26 0%,#0f1117 70%)"}'>{SLIDES[name]()}</div></body></html>"
+    html = f"<html><head><meta charset='utf-8'><style>{CSS}</style></head><body><div class='s{" dark" if name.endswith("esquema") else ""}{" ia" if name.endswith("_ia") else ""}' style='background-image:{bg(photo) if not name.endswith("esquema") else "radial-gradient(120% 90% at 30% 20%,#1a1d26 0%,#0f1117 70%)"}'>{SLIDES[name]()}</div></body></html>"
     with sync_playwright() as p:
         b = p.chromium.launch(); pg = b.new_page(viewport={"width":1080,"height":1350})
         pg.set_content(html); pg.wait_for_timeout(300)
