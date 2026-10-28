@@ -56,6 +56,17 @@ h2{font-family:Lora;font-weight:700;font-size:84px;line-height:1.1;color:#F5C518
 .b3{width:100%;background:#ff4d4f}
 .fecho2{position:absolute;left:80px;right:80px;bottom:150px;font-family:Lora;font-style:italic;font-size:44px;line-height:1.25;color:#e8ebf2}
 .nota{position:absolute;left:80px;bottom:96px;font-size:20px;color:#7d8597}
+
+.serie{position:absolute;left:80px;right:80px;top:470px}
+.st{display:flex;align-items:center;gap:26px;margin-bottom:34px;font-weight:600;font-size:30px;color:#9aa3b5}
+.st b{width:58px;height:58px;border-radius:50%;border:3px solid #4a5163;display:flex;align-items:center;justify-content:center;font-size:26px;color:#9aa3b5;flex:none}
+.st.done{color:#e8ebf2}.st.done b{border-color:#F5C518;color:#F5C518}
+.st.next{color:#fff}.st.next b{background:#F5C518;border-color:#F5C518;color:#111}
+.st i{font-style:normal;font-size:22px;font-weight:700;color:#F5C518;letter-spacing:2px;margin-left:6px}
+.cta2{position:absolute;left:80px;right:80px;bottom:200px;font-weight:700;font-size:30px;color:#F5C518;line-height:1.35}
+.assin{position:absolute;left:80px;right:80px;bottom:72px;border-top:1px solid #2c3140;padding-top:30px}
+.assin b{display:block;font-size:26px}.assin span{font-size:22px;color:#9aa3b5}
+.h2b{position:absolute;right:80px;bottom:100px;font-weight:600;font-size:24px}
 .h{position:absolute;right:80px;bottom:82px;font-weight:600;font-size:22px}
 """
 
@@ -131,6 +142,22 @@ SLIDES = {
    <div class="fecho2">O barato aqui é o que sai caro lá na frente.</div>
    <div class="nota">Comparação ilustrativa, sem escala exata.</div>
    <div class="h">@eng.josedoniseti</div>""",
+ "slide06_engenheiro": lambda: f"""<div class="c"><div class="dots">{dots(6)}</div>
+   <h2>Quem lê o solo<br>é o engenheiro</h2>
+   <div class="sub" style="text-shadow:0 2px 12px rgba(0,0,0,.9)">Ele interpreta a sondagem<br>e dimensiona a fundação, com ART.</div><style>.s:before{{background:linear-gradient(180deg,rgba(14,18,30,.95) 0%,rgba(14,18,30,.85) 30%,rgba(14,18,30,.25) 48%,rgba(14,18,30,0) 60%,rgba(14,18,30,.45) 100%) !important}}</style>
+   <div class="h">@eng.josedoniseti</div></div>""",
+ "slide07_cta": lambda: f"""<div class="c"><div class="dots">{dots(7)}</div>
+   <h1 style="font-size:76px;margin-top:86px">Próximo capítulo:<br><em>Projeto e ART</em></h1></div>
+   <div class="serie">
+    <div class="st done"><b>✓</b>Topografia e sondagem<i>HOJE</i></div>
+    <div class="st next"><b>2</b>Projeto e ART</div>
+    <div class="st"><b>3</b>Alvará e ART de execução</div>
+    <div class="st"><b>4</b>Orçamento e cronograma</div>
+   </div>
+   <div style="position:absolute;left:80px;top:900px;font-size:28px;color:#e8ebf2">Salve a série para consultar antes de construir.</div>
+   <div class="cta2">Vai construir em Fartura e região?<br>Me chama no Direct antes de começar 👇</div>
+   <div class="assin"><b>José Doniseti</b><span>Eng. Civil · CREA 5068891394 · Corretor · CRECI 318782-F</span></div>
+   <div class="h2b">@eng.josedoniseti</div>""",
  "slide01_capa": lambda: f"""<div class="c"><div class="dots">{dots(1)}</div>
    <div class="tag">CAP. 2 · ETAPA 1</div>
    <h1>Seu terreno esconde<br>o que você <em>não vê.</em></h1>
@@ -138,7 +165,7 @@ SLIDES = {
 }
 
 def render(name, photo=None):
-    html = f"<html><head><meta charset='utf-8'><style>{CSS}</style></head><body><div class='s{" dark" if name.endswith("esquema") else ""}{" ia" if name.endswith("_ia") or name.startswith(("slide03","slide04")) else ""}{" dark" if name.startswith("slide05") else ""}' style='background-image:{bg(photo) if not (name.endswith("esquema") or name.startswith("slide05")) else "radial-gradient(120% 90% at 30% 20%,#1a1d26 0%,#0f1117 70%)"}'>{SLIDES[name]()}</div></body></html>"
+    html = f"<html><head><meta charset='utf-8'><style>{CSS}</style></head><body><div class='s{" dark" if name.endswith("esquema") else ""}{" ia" if name.endswith("_ia") or name.startswith(("slide03","slide04")) else ""}{" dark" if name.startswith(("slide05","slide07")) else ""}' style='background-image:{bg(photo) if not (name.endswith("esquema") or name.startswith(("slide05","slide07"))) else "radial-gradient(120% 90% at 30% 20%,#1a1d26 0%,#0f1117 70%)"}'>{SLIDES[name]()}</div></body></html>"
     with sync_playwright() as p:
         b = p.chromium.launch(); pg = b.new_page(viewport={"width":1080,"height":1350})
         pg.set_content(html); pg.wait_for_timeout(300)
