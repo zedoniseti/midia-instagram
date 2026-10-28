@@ -116,7 +116,7 @@ SLIDES = {
    <h2>Topografia</h2>
    <div class="sub">Mede desnível, divisas e a área real do terreno.<br>Sem ela: aterro fora do orçamento e muro fora da divisa.</div>
    <div class="h">@eng.josedoniseti</div></div>""",
- "slide04_sondagem": lambda: f"""<style>.ia{{background:rgb(10,18,37) !important}}</style><img class="iaimg" style="height:830px;bottom:88px" src="data:image/jpeg;base64,{__import__('base64').b64encode((HERE.parent/'fotos/sondagem_recorte.jpg').read_bytes()).decode()}"><div class="c"><div class="dots">{dots(4)}</div>
+ "slide04_sondagem": lambda: f"""<style>.ia{{background:rgb(10,18,37) !important}}</style><img class="iaimg" style="height:810px;bottom:46px;transform:translateX(calc(-50% - 45px));-webkit-mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent),linear-gradient(to bottom,transparent,#000 2%,#000 95%,transparent)" src="data:image/jpeg;base64,{__import__('base64').b64encode((HERE.parent/'fotos/sondagem_recorte.jpg').read_bytes()).decode()}"><div class="c"><div class="dots">{dots(4)}</div>
    <h2>Sondagem</h2>
    <div class="sub">Mostra o tipo de solo e onde ele fica firme.<br>Sem ela, a fundação vai no chute.</div>
    <div class="h">@eng.josedoniseti</div></div>""",
