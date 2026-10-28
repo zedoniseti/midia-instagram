@@ -162,7 +162,11 @@ SLIDES = {
    <div class="tag">CAP. 2 · ETAPA 1</div>
    <h1>Seu terreno esconde<br>o que você <em>não vê.</em></h1>
    <div class="cta">ARRASTE PARA DESCOBRIR<i></i></div><div class="h">@eng.josedoniseti</div></div>
-   <svg style="position:absolute;left:0;top:0" width="1080" height="1350"><ellipse cx="712" cy="1052" rx="118" ry="62" fill="none" stroke="#F5C518" stroke-width="4" stroke-dasharray="12 9" transform="rotate(-8 712 1052)"/><text x="840" y="985" font-family="Lora" font-weight="700" font-size="64" fill="#F5C518">?</text></svg>""",
+   <svg style="position:absolute;left:0;top:0" width="1080" height="1350"><defs><filter id="gl" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+ <ellipse cx="712" cy="1052" rx="126" ry="68" fill="none" stroke="#F5C518" stroke-width="8" stroke-dasharray="22 11" stroke-linecap="round" transform="rotate(-8 712 1052)" filter="url(#gl)"/>
+ <line x1="812" y1="1000" x2="868" y2="948" stroke="#F5C518" stroke-width="5" stroke-linecap="round" filter="url(#gl)"/>
+ <circle cx="898" cy="918" r="44" fill="#F5C518" filter="url(#gl)"/>
+ <text x="898" y="944" text-anchor="middle" font-family="Lora" font-weight="700" font-size="70" fill="#111318">?</text></svg>""",
  "slide01_capa": lambda: f"""<div class="c"><div class="dots">{dots(1)}</div>
    <div class="tag">CAP. 2 · ETAPA 1</div>
    <h1>Seu terreno esconde<br>o que você <em>não vê.</em></h1>
