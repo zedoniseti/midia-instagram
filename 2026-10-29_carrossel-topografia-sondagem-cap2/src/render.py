@@ -101,6 +101,10 @@ SLIDES = {
    <h2>Pular essa etapa<br>para economizar</h2>
    <div class="sub">O barato vira trinca, recalque e fundação refeita.</div></div>
    <div class="h">@eng.josedoniseti</div>""",
+ "slide03_topografia": lambda: f"""<div class="c"><div class="dots">{dots(3)}</div>
+   <h2>Topografia</h2>
+   <div class="sub">Mede desnível, divisas e a área real do terreno.<br>Sem ela: aterro fora do orçamento e muro fora da divisa.</div>
+   <div class="h">@eng.josedoniseti</div></div>""",
  "slide01_capa": lambda: f"""<div class="c"><div class="dots">{dots(1)}</div>
    <div class="tag">CAP. 2 · ETAPA 1</div>
    <h1>Seu terreno esconde<br>o que você <em>não vê.</em></h1>
