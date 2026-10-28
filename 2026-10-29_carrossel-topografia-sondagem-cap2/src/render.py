@@ -45,6 +45,17 @@ h2{font-family:Lora;font-weight:700;font-size:84px;line-height:1.1;color:#F5C518
 .ia{background:#0c1421 !important}
 .ia:before{display:none}
 .iaimg{position:absolute;left:50%;transform:translateX(-50%);bottom:0;height:900px;-webkit-mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent),linear-gradient(to bottom,transparent,#000 10%,#000 92%,transparent);-webkit-mask-composite:source-in;mask-composite:intersect}
+
+.cmp{position:absolute;left:80px;right:80px;top:560px}
+.row{margin-bottom:58px}
+.lbl{font-weight:600;font-size:30px;margin-bottom:16px}
+.lbl span{font-weight:400;font-size:24px;color:#9aa3b5;margin-left:14px}
+.bar{height:44px;border-radius:6px}
+.b1{width:9%;background:#F5C518}
+.b2{width:62%;background:#ff6b6d}
+.b3{width:100%;background:#ff4d4f}
+.fecho2{position:absolute;left:80px;right:80px;bottom:150px;font-family:Lora;font-style:italic;font-size:44px;line-height:1.25;color:#e8ebf2}
+.nota{position:absolute;left:80px;bottom:96px;font-size:20px;color:#7d8597}
 .h{position:absolute;right:80px;bottom:82px;font-weight:600;font-size:22px}
 """
 
@@ -105,10 +116,21 @@ SLIDES = {
    <h2>Topografia</h2>
    <div class="sub">Mede desnível, divisas e a área real do terreno.<br>Sem ela: aterro fora do orçamento e muro fora da divisa.</div>
    <div class="h">@eng.josedoniseti</div></div>""",
- "slide04_sondagem": lambda: f"""<style>.ia{{background:rgb(14,21,38) !important}}</style><img class="iaimg" style="height:830px;bottom:88px" src="data:image/jpeg;base64,{__import__('base64').b64encode((HERE.parent/'fotos/sondagem_recorte.jpg').read_bytes()).decode()}"><div class="c"><div class="dots">{dots(4)}</div>
+ "slide04_sondagem": lambda: f"""<style>.ia{{background:rgb(10,18,37) !important}}</style><img class="iaimg" style="height:830px;bottom:88px" src="data:image/jpeg;base64,{__import__('base64').b64encode((HERE.parent/'fotos/sondagem_recorte.jpg').read_bytes()).decode()}"><div class="c"><div class="dots">{dots(4)}</div>
    <h2>Sondagem</h2>
    <div class="sub">Mostra o tipo de solo e onde ele fica firme.<br>Sem ela, a fundação vai no chute.</div>
    <div class="h">@eng.josedoniseti</div></div>""",
+ "slide05_custo": lambda: f"""<div class="c"><div class="dots">{dots(5)}</div>
+   <h2>Barato perto<br>do prejuízo</h2>
+   <div class="sub">Investigar o solo custa pouco. Errar custa muito.</div></div>
+   <div class="cmp">
+  <div class="row"><div class="lbl">Topografia + sondagem<span>antes do projeto</span></div><div class="bar b1"></div></div>
+  <div class="row"><div class="lbl">Reforço de fundação<span>depois da trinca</span></div><div class="bar b2"></div></div>
+  <div class="row"><div class="lbl">Demolir e refazer<span>no pior caso</span></div><div class="bar b3"></div></div>
+ </div>
+   <div class="fecho2">O barato aqui é o que sai caro lá na frente.</div>
+   <div class="nota">Comparação ilustrativa, sem escala exata.</div>
+   <div class="h">@eng.josedoniseti</div>""",
  "slide01_capa": lambda: f"""<div class="c"><div class="dots">{dots(1)}</div>
    <div class="tag">CAP. 2 · ETAPA 1</div>
    <h1>Seu terreno esconde<br>o que você <em>não vê.</em></h1>
@@ -116,7 +138,7 @@ SLIDES = {
 }
 
 def render(name, photo=None):
-    html = f"<html><head><meta charset='utf-8'><style>{CSS}</style></head><body><div class='s{" dark" if name.endswith("esquema") else ""}{" ia" if name.endswith("_ia") or name.startswith(("slide03","slide04")) else ""}' style='background-image:{bg(photo) if not name.endswith("esquema") else "radial-gradient(120% 90% at 30% 20%,#1a1d26 0%,#0f1117 70%)"}'>{SLIDES[name]()}</div></body></html>"
+    html = f"<html><head><meta charset='utf-8'><style>{CSS}</style></head><body><div class='s{" dark" if name.endswith("esquema") else ""}{" ia" if name.endswith("_ia") or name.startswith(("slide03","slide04")) else ""}{" dark" if name.startswith("slide05") else ""}' style='background-image:{bg(photo) if not (name.endswith("esquema") or name.startswith("slide05")) else "radial-gradient(120% 90% at 30% 20%,#1a1d26 0%,#0f1117 70%)"}'>{SLIDES[name]()}</div></body></html>"
     with sync_playwright() as p:
         b = p.chromium.launch(); pg = b.new_page(viewport={"width":1080,"height":1350})
         pg.set_content(html); pg.wait_for_timeout(300)
