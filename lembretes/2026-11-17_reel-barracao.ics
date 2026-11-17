@@ -5,18 +5,16 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:reel158-20261117@eng.josedoniseti
-SEQUENCE:1
-DTSTAMP:20261117T040000Z
+SEQUENCE:2
+DTSTAMP:20261117T134500Z
 DTSTART:20261117T230000Z
 DTEND:20261117T231500Z
 SUMMARY:FAZER: publicar o Reel do barracão Anália Franco
 DESCRIPTION:Pelo app do Instagram\, com áudio em alta (seta ↗\, instru
- mental\, volume baixo)\; compartilhar no Facebook. Use a versão combinad
- a com a proprietária. Vídeos e legendas no Telegram às 19h44.\nVenda +
-  locação: https://github.com/zedoniseti/midia-instagram/raw/main/2026-1
- 1-17_barracao-af/barracao-af-ambos-v3.mp4\nSó venda: https://github.com/
- zedoniseti/midia-instagram/raw/main/2026-11-17_barracao-af/barracao-af-ve
- nda-v3.mp4
+ mental\, volume baixo)\; compartilhar no Facebook. Versão venda + locaç
+ ão (locação R$ 30 mil). Vídeo e legenda no Telegram às 19h44.\nVíde
+ o: https://github.com/zedoniseti/midia-instagram/raw/main/2026-11-17_barr
+ acao-af/barracao-af-ambos-v4.mp4
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:FAZER: publicar o Reel do barracão Anália Franco
